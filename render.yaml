@@ -1,0 +1,23 @@
+services:
+  - type: worker
+    name: petro-host-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TOKEN
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: ADMIN_ID
+        sync: false
+      - key: YOUR_USERNAME
+        value: TOBISPORTAL
+      - key: UPDATE_CHANNEL
+        value: TOBIIPORTAL
+      - key: FREE_USER_LIMIT
+        value: "2"
+      - key: SUBSCRIBED_USER_LIMIT
+        value: "10"
+      - key: ADMIN_LIMIT
+        value: "999"
